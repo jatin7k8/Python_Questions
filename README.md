@@ -297,5 +297,72 @@ class Solution(object):
         return power == n 
 
 ````
+---------------------------------------------------------------------------------------------------------------
 
+
+# nums = [2,2,1,1,1,2,2]
+
+# # for i in nums:
+# #     print(i)
+
+# l = []
+# for i in range(len(nums)):
+#     if nums[i] != nums[i-1]:
+#         l.append(nums[i])
+
+# print(l)
+
+# # num_map = {}
+# max_count = 0 
+# for i in l: 
+#     prev_count = 0 
+#     for j in nums:
+        
+#         if i == j:
+#             prev_count += 1 
+        
+#     if prev_count > max_count:
+        
+# def majorityElement(nums):
+#     # Step 1: Create a hashmap (dictionary) to store counts of each element
+#     counts = {}
     
+#     # Step 2: Count the frequency of each element
+#     for num in nums:
+#         counts[num] = counts.get(num, 0) + 1
+    
+#     # Step 3: Find the element that appears more than n // 2 times
+#     for num, count in counts.items():
+#         if count > len(nums) // 2:
+#             return num, counts
+
+# nums = [2, 2, 1, 1, 1, 2, 2]
+# print(majorityElement(nums))  # Output: 2
+ 
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        k = 0  # Pointer to track the position of the next valid element
+        
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]  # Move valid element to position k
+                k += 1  # Increment k for the next valid element
+        
+        return k  # Return the count of elements that are not equal to val
+
+# Example usage:
+nums = [3, 2, 2, 3]
+val = 3
+obj = Solution()
+k = obj.removeElement(nums, val)
+print(k)        # Output: 2
+print(nums[:k]) # Output: [2, 2] (modified list in-place)
+
+        
+
+

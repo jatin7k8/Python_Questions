@@ -45,3 +45,31 @@ class Solution(object):
             num_map[n]  = i 
 
 ```
+### 2. left shift rotation:- 
+```python 
+
+def left_shifiting(n, left_shift):
+    
+    temp = n[:left_shift]
+    for i in range(len(n)-left_shift):
+        n[i] = n[i + left_shift]
+    
+    n[-left_shift:]  = temp 
+    
+    return f'After shifting by {left_shift} :- \nresult look like {n}'
+        
+a = [1,2,3,4,5,6,7]
+l = 3
+print("Before shifting :- ", a)
+print(left_shifiting(a, l))
+
+```
+    
+    
+    
+    
+    
+    
+    
+    
+    

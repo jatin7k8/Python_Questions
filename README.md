@@ -155,7 +155,7 @@ class Solution(object):
         return power == n 
 ````
 
-# 258. Add Digits - Solved (Easy)
+### 258. Add Digits - Solved (Easy)
 
 **LeetCode Question:** [ 258. Add Digits - Solved (Easy)](https://leetcode.com/problems/add-digits/)
 

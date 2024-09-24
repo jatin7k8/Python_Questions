@@ -95,6 +95,8 @@ An integer `n` is a power of two if there exists an integer `x` such that \( n =
 - **Input:** `n = 3`
 - **Output:** `false`
 
+
+#### 1st Approach using by loop 
 ```python
 class Solution(object):
     def isPowerOfTwo(self, n):
@@ -112,11 +114,188 @@ class Solution(object):
         return True
 ```
 
+#### 2nd approach using Recursion 
+
+```Python
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        if n <= 0:
+            return False 
+        if n == 1:
+            return True
+        if n % 2 != 0:
+            return False
+            
+        return self.isPowerOfTwo
+
+```
 
 
-    
-    
-    
-    
-    
+#### 3rd approach using integer 
+
+````Python
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        if n <= 0:
+            return False 
+        if n == 1:
+            return True
+        power = 1
+        while power < n:
+            power *= 2
+            
+        return power == n 
+````
+
+# 258. Add Digits - Solved (Easy)
+
+**LeetCode Question:** [ 258. Add Digits - Solved (Easy)](https://leetcode.com/problems/add-digits/)
+
+### Example 1:
+- **Input:** `num = 38`
+- **Output:** `2`
+
+### Example 2:
+- **Input:** `num = 0`
+- **Output:** `0`
+
+## Solution:
+
+**1st approach**
+```python
+
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        # Base case: if the number is a single digit, return it
+        if len(str(num)) == 1:
+            return num 
+
+        # Calculate the sum of the digits
+        sum_value = 0
+        for i in str(num):
+            sum_value += int(i)
+        
+        # Update num with the sum of digits and make recursive call
+        num = sum_value 
+        return self.addDigits(num)
+
+```
+
+**2nd approach**
+**LeetCode Question:** [ 258. Add Digits - Solved (Easy)](https://leetcode.com/problems/add-digits/)
+```python
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        if num < 10:
+            return num
+            
+        sum_value = 0
+        for i in str(num):
+            sum_value += int(i)
+
+        return self.addDigits(sum_value)
+
+```
+
+## 326. Power of Three
+**LeetCode Question:** [ 326. Power of Three (Easy)](https://leetcode.com/problems/power-of-three/)
+
+
+### Example 1:
+
+- **Input**: `n = 27`
+- **Output**: `true`
+- **Explanation**: \(27 = 3^3\)
+
+### Example 2:
+
+- **Input**: `n = 0`
+- **Output**: `false`
+- **Explanation**: There is no integer `x` such that \(3^x = 0\).
+
+### Example 3:
+
+- **Input**: `n = 9`
+- **Output**: `true`
+- **Explanation**: \(9 = 3^2\)
+
+
+#### 1st approach with loop 
+``` Python
+class Solution(object):
+    def isPowerOfThree(self, n):
+        """     
+        :type n: int
+        :rtype: bool
+        """
+        if n <= 0:
+            return False 
+        
+        if n == 1:
+            return True 
+        
+        while n >1:
+            if n % 3 != 0:
+                return False 
+            n = n//3
+        return True 
+
+```
+#### 2nd approach by using recursion 
+
+```python
+
+class Solution(object):
+    def isPowerOfThree(self, n):
+        """     
+        :type n: int
+        :rtype: bool
+        """
+        if n <= 0:
+            return False 
+        if n == 1:
+            return True  
+        if n % 3 !=0:
+            return False 
+        return self.isPowerOfThree(n//3)
+```
+
+#### 3rd Using Integer Powers (Exponentiation)
+
+```` Python
+class Solution(object):
+    def isPowerOfThree(self, n):
+        """     
+        :type n: int
+        :rtype: bool
+        """
+        if n <= 0:
+            return False 
+        if n == 1:
+            return True  
+        power = 1  
+        
+        while power<n:
+            power *= 3 
+        
+        return power == n 
+
+````
+
     

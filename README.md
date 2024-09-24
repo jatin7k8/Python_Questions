@@ -64,6 +64,14 @@ print("Before shifting :- ", a)
 print(left_shifiting(a, l))
 
 ```
+
+```
+    
+Before shifting :-  [1, 2, 3, 4, 5, 6, 7]
+After shifting by 3 :- 
+result look like [4, 5, 6, 7, 1, 2, 3]
+
+```
     
     
     

@@ -404,5 +404,30 @@ class Solution(object):
 ```
 
         
+## 9. Palindrome Number
+**LeetCode Question:** [9. Palindrome Number(Easy)](https://leetcode.com/problems/palindrome-number/description/)
 
+```Python
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        original_value = x 
+        if x < 0:
+            return False
+
+        reversed_sum = 0
+        while x > 0:
+            r = x %10 
+            reversed_sum = reversed_sum * 10 + r 
+            x = x//10 
+        
+        if original_value == reversed_sum:
+            return True 
+
+        return False 
+        
+```
 

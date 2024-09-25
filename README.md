@@ -363,6 +363,46 @@ k = obj.removeElement(nums, val)
 print(k)        # Output: 2
 print(nums[:k]) # Output: [2, 2] (modified list in-place)
 
+
+
+
+
+
+## 7. Reverse Integer
+
+**LeetCode Question:** [7. Reverse Integer(medium](https://leetcode.com/problems/reverse-integer/description/)
+
+
+```Python
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+
+        int_min = 2**31 
+        int_max = -2**31 + 1
+
+        is_negative = False
+        if x < 0:
+            is_negative = True
+            x = -x
+
+        reversed_sum = 0 
+        while x > 0:
+            r = x %10 
+            reversed_sum = reversed_sum * 10  + r 
+            x //= 10 
+
+        if is_negative:
+            reversed_sum = -reversed_sum
+
+        if int_min < reversed_sum or int_max > reversed_sum:
+            return 0
+        return reversed_sum
+```
+
         
 
 
